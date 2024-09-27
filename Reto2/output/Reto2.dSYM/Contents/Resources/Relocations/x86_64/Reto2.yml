@@ -1,0 +1,8 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/user/Desktop/USC/Reto2/output/Reto2'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _calcularPromedio, symObjAddr: 0x0, symBinAddr: 0x100003D00, symSize: 0x60 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _calcularPromedio, symObjAddr: 0x0, symBinAddr: 0x100003D00, symSize: 0x60 }
+  - { offsetInCU: 0xA8, offset: 0xA8, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x60, symBinAddr: 0x100003D60, symSize: 0x18B }
+...
