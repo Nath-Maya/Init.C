@@ -7,39 +7,43 @@
 // >=4.5<=5.0). Calcular el promedio de las notas de los estudiantes y el
 // número de estudiantes agrupados por las notas (en letras).
 
+
 int main() {
     int n, i;
-    float nota, sumaNotas = 0;
-    int reprobado = 0, aceptable = 0, bien = 0, satisfactorio = 0, excelente = 0;
+    float notas[100];
+    int conteo[5] = {0}; 
+    float sumaNotas[5] = {0.0};
 
-    printf("Cantidad de estudiantes en la clase ");
+    printf("¿Cuántos estudiantes desea evaluar? ");
     scanf("%d", &n);
 
     for (i = 0; i < n; i++) {
-        printf("Nota del estudiante %d: ", i + 1);
-        scanf("%f", &nota);
+        printf("Ingrese la nota del estudiante %d (1-5): ", i + 1);
+        scanf("%f", &notas[i]);
 
-        sumaNotas += nota;
-
-        if (nota >= 0.0 && nota < 3.0) {
-            reprobado++;
-        } else if (nota >= 3.0 && nota < 3.5) {
-            aceptable++;
-        } else if (nota >= 3.5 && nota < 4.0) {
-            bien++;
-        } else if (nota >= 4.0 && nota < 4.5) {
-            satisfactorio++;
-        } else if (nota >= 4.5 && nota <= 5.0) {
-            excelente++;
+        if (notas[i] >= 0.0 && notas[i] < 3.0) {
+            conteo[0]++;
+            sumaNotas[0] += notas[i];
+        } else if (notas[i] >= 3.0 && notas[i] < 3.5) {
+            conteo[1]++;
+            sumaNotas[1] += notas[i];
+        } else if (notas[i] >= 3.5 && notas[i] < 4.0) {
+            conteo[2]++;
+            sumaNotas[2] += notas[i];
+        } else if (notas[i] >= 4.0 && notas[i] < 4.5) {
+            conteo[3]++;
+            sumaNotas[3] += notas[i];
+        } else if (notas[i] >= 4.5 && notas[i] <= 5.0) {
+            conteo[4]++;
+            sumaNotas[4] += notas[i];
         }
     }
 
-    printf("\nPromedio: %.2f\n", sumaNotas / n);
-    printf("Reprobados: %d\n", reprobado);
-    printf("Aceptable: %d\n", aceptable);
-    printf("Bien: %d\n", bien);
-    printf("Satisfactorio: %d\n", satisfactorio);
-    printf("Excelente: %d\n", excelente);
+    for (i = 0; i < 5; i++) {
+        if (conteo[i] > 0) {
+            printf("Promedio de la categoría %d: %.2f\n", i, sumaNotas[i] / conteo[i]);
+        }
+    }
 
     return 0;
 }
