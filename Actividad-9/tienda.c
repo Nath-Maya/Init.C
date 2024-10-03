@@ -15,22 +15,27 @@
 // que denominación.
 
 int main() {
-    int cantidadBicicleta = 150000, cantidadCasco = 20000, cantidadLuz = 5000;
-    int bicicletasVendidas, cascosVendidos, lucesVendidas, totalFactura;
-    int seguir = 1, totalCaja = 0;
+    char *productos[] = {"Leche", "Huevos", "Pan"};
+    int precios[] = {1000, 350, 500};
+    int cantidades[3] = {0};
+    int totalCaja = 0;
+    int seguir = 1;
     int billetes[6] = {10000, 5000, 2000, 1000, 500, 100};
     int cantidadBilletes[6] = {10, 10, 10, 10, 10, 10};
 
     while (seguir) {
-        printf("Cuantas bicicletas? ");
-        scanf("%d", &bicicletasVendidas);
-        printf("Cuantos cascos? ");
-        scanf("%d", &cascosVendidos);
-        printf("Cuantas luces? ");
-        scanf("%d", &lucesVendidas);
+        for (int i = 0; i < 3; i++) {
+            printf("Cuantas %s? ", productos[i]);
+            scanf("%d", &cantidades[i]);
+        }
 
-        totalFactura = (bicicletasVendidas * cantidadBicicleta) + (cascosVendidos * cantidadCasco) + (lucesVendidas * cantidadLuz);
-        printf("Factura: %d = %d*%d + %d*%d + %d*%d\n", totalFactura, bicicletasVendidas, cantidadBicicleta, cascosVendidos, cantidadCasco, lucesVendidas, cantidadLuz);
+        int totalFactura = 0;
+        printf("Factura:\n");
+        for (int i = 0; i < 3; i++) {
+            totalFactura += cantidades[i] * precios[i];
+            printf("%d * %s * %d = %d\n", cantidades[i], productos[i], precios[i], cantidades[i] * precios[i]);
+        }
+        printf("Total: %d\n", totalFactura);
 
         printf("Pago: ");
         int pago;
