@@ -6,6 +6,8 @@
 // al salir, debe determinar cuántos quedaron en cada categoría y cuál es el
 // promedio de IMC de cada categoría.
 
+
+
 void calculateIMC(float height, float weight, float* imc, char* category);
 void printResults(int lowCount, float lowSum, int normalCount, float normalSum, int overweightCount, float overweightSum);
 
