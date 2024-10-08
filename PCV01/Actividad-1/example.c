@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    printf("Es divertido escribir mi propio programa en C.\n");
+    printf("Hi, friend!\n\nThis is my first C program.\n");
     return 0;
 }
