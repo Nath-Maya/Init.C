@@ -58,6 +58,8 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
-    "chrono": "c"
+    "*.css": "css",
+    "chrono": "c",
+    "stdio.h": "c"
   }
 }
