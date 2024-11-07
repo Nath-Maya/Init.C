@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+//? Declaracion de funciones
+
+void calculateAverage();
+void invertString();
+void isPrime();
+void countVowelsConsonants();
+void factorial();
+void exchangeValues();
+
 int main()
 {
 
@@ -43,7 +52,32 @@ int main()
       printf("Opcion Incorrecta\n");
    }
 
+//? Definicion de las funciones
+// Se establece el procedimiento que hara cada una de las funciones
+
+void calculateAverage() {
+    
+}
+
+void invertString() {
    
+}
+
+void isPrime() {
+    
+}
+
+void countVowelsConsonants() {
+    
+}
+
+void factorial() {
+    
+}
+
+void exchangeValues() {
+    
+}
 
 
 
