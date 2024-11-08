@@ -24,7 +24,7 @@ int main()
    printf("4. Contar vocales y consonantes en una cadena\n");
    printf("5. Calcular el factorial de un número\n");
    printf("6. Intercambiar los valores de dos enteros\n\n");
-   printf("Seleccione la utilidad o herramienta que necesita usar: \n\n");
+   printf("Seleccione la utilidad o herramienta que necesita usar: \n");
    scanf("%d", &option);
    
    //* Estructura de Control de la opcion seleccionada
@@ -32,15 +32,20 @@ int main()
    {
    case 1:
       printf("Opcion seleccionada: Calcular el promedio de un arreglo de enteros\n");
+      calculateAverage();
+
       break;
    case 2:
       printf("Opcion seleccionada: Invertir una cadena de caracteres\n");
+      invertString();
       break;
    case 3:
       printf("Opcion seleccionada: Verificar si un número es primo\n");
+
       break;
    case 4:
       printf("Opcion seleccionada: Contar vocales y consonantes en una cadena\n");
+
       break;
    case 5:
       printf("Opcion seleccionada: Calcular el factorial de un número\n");
@@ -52,14 +57,35 @@ int main()
       printf("Opcion Incorrecta\n");
    }
 
+   return 0;
+
+   }
+
+
 //? Definicion de las funciones
 // Se establece el procedimiento que hara cada una de las funciones
 
-void calculateAverage() {
-    
-}
+   void calculateAverage()
+   {
+      int suma = 0, sizeArray, i;
+      printf("Cuantos numeros va a ingresar ?: ");
+      scanf("%d", &sizeArray);
+      int arr[sizeArray];
+
+      printf("Ingresar los numeros: \n");
+      for (i = 0; i < sizeArray; i++)
+      {
+         scanf("%d", &arr[i]);
+         suma += arr[i];
+      }
+
+      float promedio = (float)suma / sizeArray;
+      printf("El promedio es: %.1f\n", promedio);
+   }
 
 void invertString() {
+   
+
    
 }
 
@@ -81,5 +107,4 @@ void exchangeValues() {
 
 
 
-   return 0;
-}
+
