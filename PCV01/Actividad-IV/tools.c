@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 //? Declaracion de funciones
 
@@ -12,7 +13,7 @@ void exchangeValues();
 int main()
 {
 
-   //** Definir la variable que contendra la funcion 
+   //** Definir la variable que contendra la funcion
    int option;
 
    //**  Imprimo las opciones para que el usuario seleccione
@@ -26,7 +27,7 @@ int main()
    printf("6. Intercambiar los valores de dos enteros\n\n");
    printf("Seleccione la utilidad o herramienta que necesita usar: \n");
    scanf("%d", &option);
-   
+
    //* Estructura de Control de la opcion seleccionada
    switch (option)
    {
@@ -41,7 +42,7 @@ int main()
       break;
    case 3:
       printf("Opcion seleccionada: Verificar si un número es primo\n");
-
+      isPrime();
       break;
    case 4:
       printf("Opcion seleccionada: Contar vocales y consonantes en una cadena\n");
@@ -58,53 +59,76 @@ int main()
    }
 
    return 0;
-
-   }
-
+}
 
 //? Definicion de las funciones
 // Se establece el procedimiento que hara cada una de las funciones
 
-   void calculateAverage()
+void calculateAverage()
+{
+   int suma = 0, sizeArray, i;
+   printf("Cuantos numeros va a ingresar ?: ");
+   scanf("%d", &sizeArray);
+   int arr[sizeArray];
+
+   printf("Ingresar los numeros: \n");
+   for (i = 0; i < sizeArray; i++)
    {
-      int suma = 0, sizeArray, i;
-      printf("Cuantos numeros va a ingresar ?: ");
-      scanf("%d", &sizeArray);
-      int arr[sizeArray];
-
-      printf("Ingresar los numeros: \n");
-      for (i = 0; i < sizeArray; i++)
-      {
-         scanf("%d", &arr[i]);
-         suma += arr[i];
-      }
-
-      float promedio = (float)suma / sizeArray;
-      printf("El promedio es: %.1f\n", promedio);
+      scanf("%d", &arr[i]);
+      suma += arr[i];
    }
 
-void invertString() {
-   
-
-   
+   float promedio = (float)suma / sizeArray;
+   printf("El promedio es: %.1f\n", promedio);
 }
 
-void isPrime() {
-    
+void invertString()
+{
+   char stringCharacters[50];
+
+   printf("Ingrese una palabra o cadena de caracteres: ");
+   scanf("%s", stringCharacters);
+
+   int len = strlen(stringCharacters);
+   printf("Texto o Cadena invertida: ");
+   for (int i = len - 1; i >= 0; i--)
+   {
+      printf("%c", stringCharacters[i]);
+   }
+   printf("\n");
 }
 
-void countVowelsConsonants() {
-    
+void isPrime()
+{
+   int num = 0, i;
+   int isPrime = 1;
+
+   printf("Si el numero es primo obtendra un resultado 1, de lo contrario obtendra un 0. \n");
+   printf("Ingrese un numero: \n");
+   scanf("%d", &num);
+
+  if (num <= 1) {
+        isPrime = 0; 
+    } else {
+        for (i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                isPrime = 0; 
+                break;
+            }
+        }
+    }
+
+    printf("%d\n", isPrime);
 }
 
-void factorial() {
-    
+void countVowelsConsonants()
+{
 }
 
-void exchangeValues() {
-    
+void factorial()
+{
 }
 
-
-
-
+void exchangeValues()
+{
+}
