@@ -14,9 +14,9 @@ void exchangeValues();
 int main()
 {
 
-   //** Definir la variable que contendra la funcion
-   int option;
-   char back;
+   //** Definir variables
+   int option; //Variable que indica la funcion a ejecutar
+   char back; //Variable usuario indica si sigue en tools
 
    do
    {
