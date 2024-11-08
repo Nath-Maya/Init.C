@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 //? Declaracion de funciones
 
@@ -46,10 +47,11 @@ int main()
       break;
    case 4:
       printf("Opcion seleccionada: Contar vocales y consonantes en una cadena\n");
-
+      countVowelsConsonants();
       break;
    case 5:
       printf("Opcion seleccionada: Calcular el factorial de un número\n");
+      factorial();
       break;
    case 6:
       printf("Opcion seleccionada: Intercambiar los valores de dos enteros\n");
@@ -107,28 +109,89 @@ void isPrime()
    printf("Ingrese un numero: \n");
    scanf("%d", &num);
 
-  if (num <= 1) {
-        isPrime = 0; 
-    } else {
-        for (i = 2; i * i <= num; i++) {
-            if (num % i == 0) {
-                isPrime = 0; 
-                break;
-            }
-        }
-    }
+   if (num <= 1)
+   {
+      isPrime = 0;
+   }
+   else
+   {
+      for (i = 2; i * i <= num; i++)
+      {
+         if (num % i == 0)
+         {
+            isPrime = 0;
+            break;
+         }
+      }
+   }
 
-    printf("%d\n", isPrime);
+   printf("%d\n", isPrime);
 }
 
 void countVowelsConsonants()
 {
+
+   char chainCharacteres[100];
+   int vowels = 0, consonant = 0;
+
+   printf("Ingrese una cadena o texto: ");
+   scanf("%s", chainCharacteres);
+
+   for (int i = 0; chainCharacteres[i] != '\0'; i++)
+   {
+      char c = chainCharacteres[i];
+      if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+      {
+         c = tolower(c);
+         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+         {
+            vowels++;
+         }
+         else
+         {
+            consonant++;
+         }
+      }
+   }
+
+   printf("Cantidado de vocales: %d\n", vowels);
+   printf("Cantidad de consonantes: %d\n", consonant);
 }
 
 void factorial()
 {
+
+   int number;
+   unsigned long long fact = 1; // Inicialización para almacenar el resultado de un factorial
+
+   printf("Ingrese un numero positivo: ");
+   scanf("%d", &number);
+
+   if (number < 0)
+   {
+      printf("El factorial no esta definido para numeros negativos.\n");
+   }
+   else
+   {
+      for (int i = 1; i <= number; i++)
+      {
+         fact *= i;
+      }
+      printf("El factorial de %d es: %llu\n", number, fact);
+   }
 }
 
 void exchangeValues()
 {
+   int a, b;
+   printf("Ingrese el primer número: ");
+   scanf("%d", &a);
+   printf("Ingrese el segundo número: ");
+   scanf("%d", &b);
+
+   printf("Valores antes del intercambio: a = %d, b = %d\n", a, b);
+   a = a + b;
+   b = a - b;
+   a = a - b;
+   printf("Valores después del intercambio: a = %d, b = %d\n", a, b);
 }
