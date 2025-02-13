@@ -37,8 +37,7 @@ int main()
       {
       case 1:
          printf("Opcion seleccionada: Calcular el promedio de un arreglo de enteros\n");
-         calculateAverage();
-
+         calculateAverage(); 
          break;
       case 2:
          printf("Opcion seleccionada: Invertir una cadena de caracteres\n");

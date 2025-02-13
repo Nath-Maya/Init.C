@@ -60,6 +60,7 @@
   "files.associations": {
     "*.css": "css",
     "chrono": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "Activity_1.C": "cpp"
   }
 }
